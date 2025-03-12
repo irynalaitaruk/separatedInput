@@ -6,7 +6,7 @@ function App() {
     console.log("Your code:", code);
   };
   return (
-    <TwoFactorAuth onComplete={handleComplete}/>
+    <TwoFactorAuth segments={6} onComplete={handleComplete}/>
   )
 }
 
