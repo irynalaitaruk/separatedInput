@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
-import TwoFactorAuth from '../../../components/two-factor-auth/TwoFactorAuth';
+import TwoFactorAuth from '../../../components/segmented-input/SegmentedInput';
 
 describe("TwoFactorAuth Component", () => {
   const onCompleteMock = vi.fn();

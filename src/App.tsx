@@ -1,4 +1,4 @@
-import TwoFactorAuth from './components/two-factor-auth/TwoFactorAuth';
+import { SegmentedInput } from './components/segmented-input/SegmentedInput';
 import './App.css'
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
     console.log("Your code:", code);
   };
   return (
-    <TwoFactorAuth segments={6} onComplete={handleComplete}/>
+    <SegmentedInput segments={6} onComplete={handleComplete}/>
   )
 }
 
