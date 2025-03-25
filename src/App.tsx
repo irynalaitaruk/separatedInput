@@ -1,3 +1,4 @@
+import { SegmentedInput } from './components/segmented-input/SegmentedInput';
 import './App.css'
 import React, { useState, useRef } from 'react';
 import { SliderRoot, SliderTrack, SliderRange, SliderThumb } from './components/slider';
@@ -54,5 +55,8 @@ const App: React.FC = () => {
     </SliderRoot>
   );
 };
+    <SegmentedInput segments={6} onComplete={handleComplete}/>
+  
+
 
 export default App
