@@ -7,19 +7,23 @@ type SliderTrackProps = HTMLAttributes<HTMLDivElement> & {
 };
 
 export const SliderTrack = forwardRef<HTMLDivElement, SliderTrackProps>(({ children, ...props }, ref) => {
-  const { trackRef, calculateNewValue, dispatch, state } = useSliderContext();
+  const { trackRef, calculateNewValue, dispatch, state, isRange } = useSliderContext();
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (!trackRef.current) return;
+    if (!trackRef.current ) return;
     const newValue = calculateNewValue(event.clientX);
 
-    const distanceToMin = Math.abs(newValue - state.minValue);
-    const distanceToMax = Math.abs(newValue - state.maxValue);
+    if (isRange) {
+      const distanceToMin = Math.abs(newValue - (state.minValue ?? 0));
+      const distanceToMax = Math.abs(newValue - (state.maxValue ?? 100));
 
-    if (distanceToMin < distanceToMax) {
-      dispatch({ type: 'SET_MIN_VALUE', payload: newValue });
+      if (distanceToMin < distanceToMax) {
+        dispatch({ type: 'SET_MIN_VALUE', payload: newValue });
+      } else {
+        dispatch({ type: 'SET_MAX_VALUE', payload: newValue });
+      }
     } else {
-      dispatch({ type: 'SET_MAX_VALUE', payload: newValue });
+      dispatch({ type: 'SET_VALUE', payload: newValue });
     }
   };
 
@@ -33,6 +37,8 @@ export const SliderTrack = forwardRef<HTMLDivElement, SliderTrackProps>(({ child
       }}
       className={styles.track}
       onClick={handleClick}
+      role="wrapper"
+      aria-label="Slider control"
     >
       {children}
     </div>
