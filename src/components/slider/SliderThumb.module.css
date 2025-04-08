@@ -1,0 +1,10 @@
+.thumb {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: purple;
+  border-radius: 50%;
+  cursor: pointer;
+}

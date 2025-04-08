@@ -1,0 +1,6 @@
+.range {
+  position: absolute;
+  height: 100%;
+  background: purple;
+  z-index: 1;
+}
