@@ -1,0 +1,19 @@
+.moon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: gray;
+}
+
+.moonTitle {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+}
