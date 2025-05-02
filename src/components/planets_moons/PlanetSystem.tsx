@@ -1,16 +1,20 @@
-import { planets, moons } from './../../constants';
+import { planets, moons } from './constants';
 import { Planet } from './Planet';
 import styles from './PlanetSystem.module.css';
+import { groupBy } from '../../helpers/groupBy';
 
 export const PlanetSystem: React.FC = () => {
+  const groupedMoons = groupBy(moons, 'planetId');
+
+  const planetWithMoons = planets.map((planet) => ({
+    ...planet,
+    moons: groupedMoons[planet.id] || [],
+  }));
+
   return (
     <div className={styles.planetSystem}>
-      {planets.map((planet) => (
-        <Planet
-          key={planet.id}
-          planet={planet}
-          moons={moons.filter((moon) => moon.planetId === planet.id)}
-        />
+      {planetWithMoons.map(({ id, title, moons }) => (
+        <Planet key={id} planet={{ id, title }} moons={moons} />
       ))}
     </div>
   );

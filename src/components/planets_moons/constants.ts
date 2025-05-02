@@ -1,22 +1,22 @@
-export interface Planets {
+export interface IPlanet {
   id: number;
   title: string;
 };
 
-export interface Moons {
+export interface IMoons {
   id: number;
   planetId: number;
   title: string;
 };
 
-export const planets: Planets[] = [
+export const planets: IPlanet[] = [
   { id: 1, title: "Jupiter" },
   { id: 2, title: "Saturn" },
   { id: 3, title: "Uranus" },
   { id: 4, title: "Neptune" },
 ];
 
-export const moons: Moons[] = [
+export const moons: IMoons[] = [
   { id: 1, planetId: 1, title: "Ganymede" },
   { id: 2, planetId: 1, title: "Callisto" },
   { id: 3, planetId: 1, title: "Io" },

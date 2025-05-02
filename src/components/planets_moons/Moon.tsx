@@ -1,8 +1,8 @@
-import { Moons } from './../../constants';
+import { IMoons } from './constants';
 import styles from './Moon.module.css';
 
 interface MoonProps {
-  moon: Moons;
+  moon: IMoons;
   color: string;
   onMoonClick: () => void;
 }
