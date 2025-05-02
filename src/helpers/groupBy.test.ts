@@ -64,14 +64,4 @@ describe("groupBy", () => {
     });
   });
 
-  // it("groups by computed key", () => {
-  //   const items = [1, 2, 3, 4, 5];
-
-  //   const result = groupBy(items, (item) => (item % 2 === 0 ? "even" : "odd"));
-
-  //   expect(result).toEqual({
-  //     odd: [1, 3, 5],
-  //     even: [2, 4],
-  //   });
-  // });
 });
