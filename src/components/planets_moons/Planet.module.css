@@ -1,0 +1,44 @@
+.planetRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.planet {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.orbitsContainer {
+  position: relative;
+  width: 250px; 
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orbit {
+  position: absolute;
+  border-radius: 50%;
+  transition: border-color 0.3s ease;
+}
+
+.planetBody {
+  width: 100px;
+  height: 100px;
+  background-color: lightgray;
+  border-radius: 50%;
+}
+
+.moons {
+  display: flex;
+  gap: 30px;
+}

@@ -1,6 +1,7 @@
 import { SegmentedInput } from './components/segmented-input/SegmentedInput';
 import './App.css'
 import { SliderRoot, SliderTrack, SliderRange, SliderThumb } from './components/slider';
+import { PlanetSystem } from './components/planets_moons/PlanetSystem';
 
 const App: React.FC = () => {
 
@@ -18,6 +19,8 @@ const App: React.FC = () => {
       </SliderTrack>
     </SliderRoot>
     <SegmentedInput segments={6} onComplete={handleComplete}/>
+    <br/>
+    <PlanetSystem />
     </>
   );
 };
